@@ -5,11 +5,6 @@ import CubeButton from '../ui-components/CubeButton';
 // import { AuthContext } from "../navigation/AuthProvider";
 
 export default function Home({ navigation }) {
-  const menu = [
-    {title: 'Study'},
-    {title: 'Content'}
-  ];
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>The Bridge</Text>
@@ -18,7 +13,7 @@ export default function Home({ navigation }) {
         <CubeButton title='노트' onPress={() => navigation.navigate('Content')} />
       </View>
       <View style={styles.row}>
-        <CubeButton title='소그룹' onPress={() => navigation.navigate('Study')} />
+        <CubeButton title='소그룹' onPress={() => navigation.navigate('Content')} />
         <CubeButton title='상담' onPress={() => navigation.navigate('Content')} />
       </View>
     </View>
