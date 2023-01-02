@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from 'react-native';
 
-import CubeButton from '../ui-components/CubeButton';
+import CubeButton from '../assets/ui-components/CubeButton';
 // import { AuthContext } from "../navigation/AuthProvider";
 
 export default function Home({ navigation }) {
@@ -10,11 +10,11 @@ export default function Home({ navigation }) {
       <Text style={styles.title}>The Bridge</Text>
       <View style={styles.row}>
         <CubeButton title='주보' onPress={() => navigation.navigate('Content')} />
-        <CubeButton title='노트' onPress={() => navigation.navigate('Content')} />
+        <CubeButton title='무제' onPress={() => navigation.navigate('Content')} />
       </View>
       <View style={styles.row}>
-        <CubeButton title='소그룹' onPress={() => navigation.navigate('Content')} />
-        <CubeButton title='상담' onPress={() => navigation.navigate('Content')} />
+        <CubeButton title='무제' onPress={() => navigation.navigate('Content')} />
+        <CubeButton title='무제' onPress={() => navigation.navigate('Content')} />
       </View>
     </View>
   );

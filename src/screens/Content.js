@@ -3,7 +3,7 @@ import axios from "axios";
 import { SafeAreaView, ScrollView, Text, View, StyleSheet } from 'react-native';
 import { documentToJson } from '../services/documentConverter.js'
 // import YoutubePlayer from "react-native-youtube-iframe";
-import AccordionItem from '../ui-components/AccordionItem';
+import AccordionItem from '../assets/ui-components/AccordionItem';
 
 const baseURL = 'https://firestore.googleapis.com/v1/projects'
 const projectName = 'my-the-kcpc-admin-a9030'
