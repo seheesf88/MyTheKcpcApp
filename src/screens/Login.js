@@ -1,5 +1,6 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {
+  Platform,
   View,
   Text,
   Image,
@@ -10,15 +11,14 @@ import {
 import FormInput from '../assets/ui-components/FormInput';
 import FormButton from '../assets/ui-components/FormButton';
 import SocialButton from '../assets/ui-components/SocialButton';
-// import { AuthContext } from '../navigation/AuthProvider';
+import { AuthContext } from '../navigation/AuthProvider';
 
 const Login = ({ navigation }) => {
-
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  // const { login } = useContext(AuthContext)
-
+  const { login, googleLogin } = useContext(AuthContext)
+  
   return (
     <View style={styles.container}>
       <Image
@@ -43,14 +43,14 @@ const Login = ({ navigation }) => {
 
       <FormButton
         buttonTitle="Sign In"
-        onPress={() => alert('alert')}
+        onPress={() => login(email, password)}
       />
 
       <SocialButton
         buttonTitle="sign in with google"
         btnType="google"
         backgroundColor="#e6eaf4"
-        onPress={() => alert('alert')}
+        onPress={() =>  googleLogin()}
       />
 
       <TouchableOpacity

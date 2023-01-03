@@ -10,7 +10,7 @@ import {
 import FormInput from '../assets/ui-components/FormInput';
 import FormButton from '../assets/ui-components/FormButton';
 import SocialButton from '../assets/ui-components/SocialButton';
-// import { AuthContext } from '../navigation/AuthProvider';
+import { AuthContext } from '../navigation/AuthProvider';
 
 const Signup = ({ navigation }) => {
 
@@ -18,7 +18,7 @@ const Signup = ({ navigation }) => {
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
 
-  // const {register} = useContext(AuthContext)
+  const {register} = useContext(AuthContext)
 
   return (
     <View style={styles.container}>

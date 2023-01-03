@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, Text, View } from 'react-native';
 
 import CubeButton from '../assets/ui-components/CubeButton';
-// import { AuthContext } from "../navigation/AuthProvider";
+import FormButton from '../assets/ui-components/FormButton';
+import { AuthContext } from "../navigation/AuthProvider";
 
 export default function Home({ navigation }) {
+  const { user, logout } = useContext(AuthContext)
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>The Bridge</Text>
+      <Text>Welcome {user.uid} </Text>
+      <FormButton
+        buttonTitle="Log out"
+        onPress={() => logout()}
+        />
       <View style={styles.row}>
         <CubeButton title='주보' onPress={() => navigation.navigate('Content')} />
         <CubeButton title='무제' onPress={() => navigation.navigate('Content')} />
