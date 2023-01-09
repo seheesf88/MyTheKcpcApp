@@ -23,14 +23,13 @@ export const AuthProvider = ({children}) => {
         googleLogin: async () => {
           try {
             await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
-            console.log('before idToken')
+
             const { idToken } = await GoogleSignin.signIn();
-            console.log('error?')
             const googleCredential = auth.GoogleAuthProvider.credential(idToken);
 
             await auth().signInWithCredential(googleCredential);
           } catch (e) {
-            console.log(e)
+            console.log('failed...?', e)
           }
         },
         register: async (email, password) => {
