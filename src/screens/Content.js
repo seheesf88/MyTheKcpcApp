@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 import { SafeAreaView, ScrollView, Text, View, StyleSheet } from 'react-native';
 import { documentToJson } from '../services/documentConverter.js'
-// import YoutubePlayer from "react-native-youtube-iframe";
+import YoutubePlayer from "react-native-youtube-iframe";
 import AccordionItem from '../assets/ui-components/AccordionItem';
 
 const baseURL = 'https://firestore.googleapis.com/v1/projects'
@@ -68,11 +68,11 @@ class Content extends Component {
             <Text style={styles.serviceDate}>
               {this.state.content.serviceDate}
             </Text>
-            {/* <YoutubePlayer
+            <YoutubePlayer
               height={250}
               play={false}
               videoId={this.state.content.youtubeKey}
-            /> */}
+            />
             <AccordionItem header={'1부 예배'} body={<FirstService data={this.state}/>}/>
             <AccordionItem header={'2부 예배'} body={<MainService data={this.state} />}/>
           </View>
