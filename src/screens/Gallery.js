@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from "axios";
 import { SafeAreaView, ScrollView, Text, View, StyleSheet, Modal, Pressable } from 'react-native';
+import BaseTitle from '../assets/ui-components/BaseTitle';
 import ImageFrame from '../assets/ui-components/ImageFrame';
 import ImageFrameModal from '../assets/ui-components/ImageFrameModal';
 
@@ -30,7 +31,7 @@ export default function Gallery ({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
-      <Text>Gallery</Text>
+      <BaseTitle text={'Gallery'} />
       <View style={styles.gallery}>
         { testData.map( item => (
           <ImageFrame

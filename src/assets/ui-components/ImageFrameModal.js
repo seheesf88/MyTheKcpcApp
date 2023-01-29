@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { windowWidth } from '../../utils/Dimentions';
 
-export default function ImageFrame(props) {
+export default function ImageFrameModal(props) {
   return (
     <TouchableOpacity onPress={props.onPress}>
       <View style={styles.frame}>

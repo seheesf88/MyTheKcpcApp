@@ -3,6 +3,7 @@ import axios from "axios";
 import { SafeAreaView, ScrollView, Text, View, StyleSheet } from 'react-native';
 import { documentToJson } from '../services/documentConverter.js'
 import YoutubePlayer from "react-native-youtube-iframe";
+import BaseTitle from '../assets/ui-components/BaseTitle';
 import AccordionItem from '../assets/ui-components/AccordionItem';
 
 const baseURL = 'https://firestore.googleapis.com/v1/projects'
@@ -64,7 +65,7 @@ class Content extends Component {
       <SafeAreaView style={styles.container}>
         <ScrollView style={styles.scrollView}>
           <View style={styles.contentContainer}>
-            <Text style={styles.contentTitle}>주일예배</Text>
+            <BaseTitle text={'주일예배'} />
             <Text style={styles.serviceDate}>
               {this.state.content.serviceDate}
             </Text>
@@ -85,14 +86,6 @@ class Content extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
-  },
-  contentTitle: {
-    flex: 1,
-    marginTop: 16,
-    paddingVertical: 8,
-    textAlign: "center",
-    fontSize: 30,
-    fontWeight: "bold"
   },
   video: {
     flex: 3
