@@ -14,10 +14,8 @@ const AuthStack = () => {
   useEffect(() => {
     let webId = ''
     if (Platform.OS === 'android') {
-      console.log('android')
       webId = '178742944673-fdcskg5ds5qvghhabo07e8ob3g9a78eb.apps.googleusercontent.com';
     } else {
-      console.log('ios')
       webId = '178742944673-hmlfj44cd8gc19b64e1k3jiu69htir14.apps.googleusercontent.com';
     }
 

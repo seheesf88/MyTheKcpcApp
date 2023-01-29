@@ -18,7 +18,7 @@ export default function Home({ navigation }) {
         />
       <View style={styles.row}>
         <CubeButton title='주보' onPress={() => navigation.navigate('Content')} />
-        <CubeButton title='무제' onPress={() => navigation.navigate('Content')} />
+        <CubeButton title='사진' onPress={() => navigation.navigate('Gallery')} />
       </View>
       <View style={styles.row}>
         <CubeButton title='무제' onPress={() => navigation.navigate('Content')} />
