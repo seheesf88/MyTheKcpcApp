@@ -3,7 +3,6 @@ import {
   Text, 
   StyleSheet
 } from 'react-native';
-import { windowHeight } from '../../utils/Dimentions';
 
 const BaseTitle = (props) => {
   return (

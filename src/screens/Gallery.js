@@ -12,52 +12,53 @@ export default function Gallery ({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
   const [imgItem, setImgItem] = useState('');
 
-  const handler = (item) => {
+  const onPressHandler = (item) => {
     setModalVisible(!modalVisible)
     setImgItem(item)
   }
 
   let testData = [
-    {id: 1, img: 'https://reactjs.org/logo-og.png'},
-    {id: 2, img: 'https://reactjs.org/logo-og.png'},
-    {id: 3, img: 'https://reactjs.org/logo-og.png'},
-    {id: 4, img: 'https://reactjs.org/logo-og.png'},
-    {id: 5, img: 'https://reactjs.org/logo-og.png'},
-    {id: 6, img: 'https://reactjs.org/logo-og.png'},
-    {id: 7, img: 'https://reactjs.org/logo-og.png'},
-    {id: 8, img: 'https://reactjs.org/logo-og.png'},
-    {id: 9, img: 'https://reactjs.org/logo-og.png'}
+    {id: 1, img: 'https://reactjs.org/logo-og.png', title: 'test1'},
+    {id: 2, img: 'https://reactjs.org/logo-og.png', title: 'test2'},
+    {id: 3, img: 'https://reactjs.org/logo-og.png', title: 'test3'},
+    {id: 4, img: 'https://reactjs.org/logo-og.png', title: 'test4'},
+    {id: 5, img: 'https://reactjs.org/logo-og.png', title: 'test5'},
+    {id: 6, img: 'https://reactjs.org/logo-og.png', title: 'test6'},
+    {id: 7, img: 'https://reactjs.org/logo-og.png', title: 'test7'},
+    {id: 8, img: 'https://reactjs.org/logo-og.png', title: 'test8'},
+    {id: 9, img: 'https://reactjs.org/logo-og.png', title: 'test9'}
   ]
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
-      <BaseTitle text={'Gallery'} />
-      <View style={styles.gallery}>
-        { testData.map( item => (
-          <ImageFrame
-            key={item.id}
-            imgSrc={item.img}
-            onPress={handler.bind(this, item)}
-          />))
-        }
-      </View>
-      
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(!modalVisible);
-        }}>
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <ImageFrameModal
-              imgSrc={imgItem.img}
-              onPress={() => setModalVisible(!modalVisible)} 
-            />
-          </View>
+        <BaseTitle text={'Gallery'} />
+        <View style={styles.gallery}>
+          { testData.map( item => (
+            <ImageFrame
+              key={item.id}
+              imgSrc={item.img}
+              onPress={onPressHandler.bind(this, item)}
+            />))
+          }
         </View>
-      </Modal>
+      
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            setModalVisible(!modalVisible);
+          }}>
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <ImageFrameModal
+                imgSrc={imgItem.img}
+                imgTitle={imgItem.title}
+                onPress={() => setModalVisible(!modalVisible)} 
+              />
+            </View>
+          </View>
+        </Modal>
       </ScrollView>
     </SafeAreaView>
   );

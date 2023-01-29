@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { windowWidth } from '../../utils/Dimentions';
 
 export default function ImageFrameModal(props) {
@@ -10,6 +10,7 @@ export default function ImageFrameModal(props) {
           source={{uri: props.imgSrc}}
           style={styles.img}
         />
+        <Text>{props.imgTitle}</Text>
       </View>
     </TouchableOpacity>
   );
