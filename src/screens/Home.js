@@ -11,11 +11,7 @@ export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>The Bridge</Text>
-      <Text>Welcome {user.uid} </Text>
-      <FormButton
-        buttonTitle="Log out"
-        onPress={() => logout()}
-        />
+      <Text>Welcome {user.displayName} </Text>
       <View style={styles.row}>
         <CubeButton title='주보' onPress={() => navigation.navigate('Content')} />
         <CubeButton title='사진' onPress={() => navigation.navigate('Gallery')} />
@@ -24,6 +20,11 @@ export default function Home({ navigation }) {
         <CubeButton title='무제' onPress={() => navigation.navigate('Content')} />
         <CubeButton title='무제' onPress={() => navigation.navigate('Content')} />
       </View>
+      <FormButton
+        buttonTitle="Log out"
+        style={styles.logOutBtn}
+        onPress={() => logout()}
+      />
     </View>
   );
 }
@@ -43,5 +44,9 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
     letterSpacing: 0.25
+  },
+  logOutBtn: {
+    width: '50%',
+    backgroundColor: '#808080',
   }
 });
