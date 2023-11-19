@@ -13,8 +13,8 @@ export default function Home({ navigation }) {
       <Text style={styles.title}>The Bridge</Text>
       <Text>Welcome {user.displayName} </Text>
       <View style={styles.row}>
-        <CubeButton title='주보' onPress={() => navigation.navigate('Content')} />
-        <CubeButton title='사진' onPress={() => navigation.navigate('Gallery')} />
+        <CubeButton title='Content' onPress={() => navigation.navigate('Content')} />
+        <CubeButton title='Gallery' onPress={() => navigation.navigate('Gallery')} />
       </View>
       <View style={styles.row}>
         <CubeButton title='Profile' onPress={() => navigation.navigate('Profile')} />
